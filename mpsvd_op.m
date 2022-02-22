@@ -19,6 +19,7 @@ else
     r=[1,r,1];
 end
 
+%! Different
 for i=d:-1:2
 %     [U,S,V]=svd(reshape(tensor,[numel(tensor)/(n2(i)*r(i+1)),n2(i)*r(i+1)])','econ');
     [U,S,V]=svds(reshape(tensor,[numel(tensor)/(n2(i)*r(i+1)),n2(i)*r(i+1)])',r(i));
@@ -27,7 +28,6 @@ for i=d:-1:2
     cores{i}.core=reshape(U(:,1:r(i))',[r(i) n(i,:) r(i+1)]);
     tensor=reshape((S(1:r(i),1:r(i))*V(:,1:r(i))')',[r(1),n2(1:i-1),r(i)]);
 end
-
 
 cores{1}.r=[r(1) r(2)];
 cores{1}.n=n(1,:);

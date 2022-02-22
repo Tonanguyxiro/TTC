@@ -19,7 +19,7 @@ para.kn=kn;
 para.Mi=Mi;
 para.Kn=Kn;
 
-version=1;   % version=1: TTC; version=2: TTV-TV
+version=1;   % version=1: TTC; version=2: TTV-TV(TTC-TV) 
 simpic=repro_exp1(picture,para,version);
 
 

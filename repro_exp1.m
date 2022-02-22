@@ -53,12 +53,16 @@ init=imresize(A,[floor(sz(1)/h),floor(sz(2)/h)],'box');
 init=imresize(init,[sz(1),sz(2)]);
 Init.core=double(init);
 Init.r=[1,1];
+
 clear init
+
+%%! initialization
 if version==1
     init=mpsvd(Init,n',r);
 elseif version==2
     init=mpsvd_op(Init,n',r);
 end
+
 clear Init
 A=A(:);
 A=double(A);
